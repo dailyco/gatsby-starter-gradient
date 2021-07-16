@@ -1,0 +1,19 @@
+@import "./../../styles/variables.scss";
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 66px;
+  background: $theme-gradient;
+
+  .link {
+    display: inline-block;
+    line-height: 66px;
+    font-size: 28px;
+    color: $top-header-text-color;
+    opacity: 0.7;
+    margin-left: 20px;
+    font-family: "Catamaran";
+    font-weight: 800;
+  }
+}
