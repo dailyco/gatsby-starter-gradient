@@ -1,22 +1,33 @@
 import React from "react"
 
+import { useAvatar } from "../utils/graphql/use-avatar"
+import { useMetaData } from "../utils/graphql/use-metadata"
+import { usePosts } from "../utils/graphql/use-posts"
+
 import Layout from "../layout"
-
-import { useQuery } from "../utils/graphql"
-
 import Title from "../components/title"
 import Bio from "../components/bio"
+import PostCards from "../components/post-cards"
 
+import "../styles/reset.scss"
 import "../styles/common.scss"
 
 export default () => {
-  const data = useQuery()
-  const { avatar, site } = data
+  const avatar = useAvatar()
+  const { title, author, introduction, social } = useMetaData()
+  const posts = usePosts()
+  console.log(posts)
 
   return (
-    <Layout title={site.siteMetadata.title}>
-      <Title title={site.siteMetadata.title} />
-      <Bio avatar={avatar} site={site} />
+    <Layout title={title}>
+      <Title title={title} />
+      <Bio
+        avatar={avatar}
+        author={author}
+        introduction={introduction}
+        social={social}
+      />
+      <PostCards posts={posts} />
     </Layout>
   )
 }

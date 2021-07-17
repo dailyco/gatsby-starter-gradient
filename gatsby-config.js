@@ -1,19 +1,29 @@
-const metaConfig = require("./user_env/config")
+const metaConfig = require("./user-env/config")
 
 module.exports = {
   siteMetadata: metaConfig,
   plugins: [
+    "gatsby-plugin-catch-links",
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/user_env/images`,
-        name: `images`,
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -26,6 +36,18 @@ module.exports = {
         icon: metaConfig.icon,
       },
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/user-env/images`,
+        name: `images`,
+      },
+    },
+
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sass`,
   ],

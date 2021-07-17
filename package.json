@@ -7,6 +7,7 @@
   "dependencies": {
     "gatsby": "^3.9.1",
     "gatsby-image": "^3.9.0",
+    "gatsby-plugin-catch-links": "^3.9.0",
     "gatsby-plugin-gatsby-cloud": "^2.9.1",
     "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-manifest": "^3.9.0",
@@ -14,7 +15,10 @@
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-sass": "^4.9.0",
     "gatsby-plugin-sharp": "^3.9.0",
+    "gatsby-remark-autolink-headers": "^4.6.0",
+    "gatsby-remark-prismjs": "^5.6.0",
     "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
