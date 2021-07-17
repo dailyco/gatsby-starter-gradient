@@ -12,5 +12,5 @@ module.exports = {
     facebook: ``,
     linkedin: ``,
   },
-  icon: `user_env/images/favicon.png`,
+  icon: `user-env/images/favicon.png`,
 }
