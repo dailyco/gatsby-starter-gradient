@@ -1,0 +1,57 @@
+@import "../../../styles/variables.scss";
+
+.post-card {
+  display: flex;
+  height: 140px;
+  // max-height: 140px;
+  align-items: center;
+  margin: 12px 0;
+  padding: 0 12px;
+
+  .post-info {
+    margin-bottom: 0.6em;
+
+    .date {
+      color: $post-info-color;
+      font-size: 13px;
+    }
+
+    .category {
+      padding: 3px 7px;
+      margin-right: 10px;
+      font-size: 11px;
+      color: #fff;
+      background: $post-info-color;
+      font-weight: bold;
+      border-radius: 9px;
+    }
+  }
+
+  .title {
+    color: $light-title-color;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+
+  .description {
+    color: $light-description-color;
+    font-size: 13px;
+    line-height: 1.4;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.post-card:hover {
+  opacity: 0.75;
+}
+
+.divider {
+  height: 1px;
+  background: $theme-gradient;
+}
