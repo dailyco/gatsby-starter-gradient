@@ -2,7 +2,7 @@ import React from "react"
 
 import { useAvatar } from "../utils/graphql/use-avatar"
 import { useMetaData } from "../utils/graphql/use-metadata"
-import { usePosts } from "../utils/graphql/use-posts"
+import { usePostExcerpts } from "../utils/graphql/use-post-excerpts"
 
 import Layout from "../layout"
 import Title from "../components/title"
@@ -15,7 +15,7 @@ import "../styles/common.scss"
 export default () => {
   const avatar = useAvatar()
   const { title, author, introduction, social } = useMetaData()
-  const posts = usePosts()
+  const posts = usePostExcerpts()
   console.log(posts)
 
   return (

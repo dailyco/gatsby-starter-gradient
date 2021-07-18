@@ -5,12 +5,12 @@ import PropTypes from "prop-types"
 import "./index.scss"
 
 const PostCard = ({ post }) => {
-  const { id, excerpt, frontmatter } = post
+  const { id, excerpt, frontmatter, fields } = post
   const { title, category, date } = frontmatter
 
   return (
     <>
-      <Link className="post-card" to={"/"}>
+      <Link className="post-card" to={fields.slug}>
         <div>
           <div className="post-info">
             <span className="category">{category}</span>

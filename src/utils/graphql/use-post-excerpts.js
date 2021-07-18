@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const usePosts = () => {
+export const usePostExcerpts = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query postsQuery {
       allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
@@ -12,6 +12,9 @@ export const usePosts = () => {
               title
               category
               date(formatString: "YYYY-MM-DD")
+            }
+            fields {
+              slug
             }
           }
         }
